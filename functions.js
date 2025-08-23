@@ -39,3 +39,34 @@ function greet (username)
     console.log(`hello ${username}`)
 }
 console.log(greet());
+// functions with objects and arrays
+// basic java script function to add items in cart
+function cartItems (val1,val2,...num){
+
+    return [val1, val2, ...num] 
+}
+console.log(cartItems(25,23,25,26645));
+// output [ 25, 26645 ] we get an array of this containg only num value when we use val1,val2,num in return output [ 25, 23, 25, 26645 ]
+// note: we should use square brackets for this case
+// how to pass objects in functions
+let demo ={
+    username :"mani",
+    age :19
+}
+function greetuser(anyobject){
+    console.log(`hi ${anyobject.username} your age is ${anyobject.age}` );
+    
+
+}
+greetuser({
+    username:"gani",
+    age:25
+})
+// how to pass on arrays in function
+let demoarray = [100,200,300]
+function narayana (anyArray){
+    console.log(anyArray[0]);
+    
+}
+console.log(narayana(demoarray));
+
