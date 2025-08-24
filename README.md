@@ -2,24 +2,40 @@ JavaScript Fundamentals
 Introduction
 Welcome to the JavaScript Fundamentals repository! This project serves as a comprehensive resource for anyone looking to master the core concepts of JavaScript, from absolute beginners to those seeking a solid refresher. As an experienced developer, I've curated this collection of examples, exercises, and best practices to help you build a strong foundation.
 
-flow of course
+flow of course:
+
 datatypes.js
+
 datatypeconversion.js
+
 stringtonumber.js
+
 comparrisionofdatatypes.js
+
 stackheap.js
+
 strings.js
+
 numberandmaths.js
+
 datetime.js
+
 arrays.js
+
 objects.js
+
 jsonapi.js
+
 functions.js
+
 globalandlocalscope.js
+
 arrowandthis.js
 
 
 License
+Thank you Hitesh sir for providing this wonderful resorce
+playlist link https://youtu.be/Hr5iLG7sUa0?si=Hl6sAGAk_XCX5kLx
 
 Getting Started
 To get the most out of this repository, you'll need a basic understanding of a terminal and a code editor.
@@ -28,12 +44,12 @@ Clone the repository:
 
 Bash
 
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/Manisimha14/Manijavascript
 Navigate to the project directory:
 
 Bash
 
-cd your-repository-name
+cd Manijavascript
 Explore the files: The code is organized into folders by topic. Feel free to open and run the files to see the examples in action.
 
 Core Concepts
