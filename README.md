@@ -2,14 +2,22 @@ JavaScript Fundamentals
 Introduction
 Welcome to the JavaScript Fundamentals repository! This project serves as a comprehensive resource for anyone looking to master the core concepts of JavaScript, from absolute beginners to those seeking a solid refresher. As an experienced developer, I've curated this collection of examples, exercises, and best practices to help you build a strong foundation.
 
-Table of Contents
-Getting Started
+flow of course
+datatypes.js
+datatypeconversion.js
+stringtonumber.js
+comparrisionofdatatypes.js
+stackheap.js
+strings.js
+numberandmaths.js
+datetime.js
+arrays.js
+objects.js
+jsonapi.js
+functions.js
+globalandlocalscope.js
+arrowandthis.js
 
-Core Concepts
-
-Best Practices
-
-Contribution
 
 License
 
