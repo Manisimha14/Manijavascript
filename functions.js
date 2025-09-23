@@ -1,12 +1,12 @@
 // **********Function*********
 // how to create functions
-function mani (){
-    console.log("this is my first function");
+function mani (username){
+    console.log("this is my first function"+username);
     
 }
 // here mani is called reference and console part is called the scope of the function
 // HOW TO EXECUTE IT
-mani()
+mani("lauvda")
 // simple function to add numbers
 function sum (n1,n2){
     console.log(n1+n2);
