@@ -10,8 +10,10 @@ let b=undefined;
 console.log(typeof b); // undefined
 let c=Number(null);
 console.log(typeof c); 
+// Number
 let d=Number(undefined);    
 console.log(typeof d); 
+// Number
 // "33abc" wiil be converted to NaN
 let e=Number("33abc");
 // true will be converted to 1
