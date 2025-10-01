@@ -4,14 +4,15 @@
 // *4 for each loops in js
 // *5how to retrive the objects data from array using for each loop
 
-// * for loop in arrays
+// * for of loop in arrays
 let array=["mani","gani"]
 for (const item of array) {
     console.log(item);
     
     
 }
-// * for lops in strings 
+// * mani ,gani
+// * for of lops in strings 
 let string="Mani simha"
 for (const element of string) {
     console.log(`character is ${element}`);
@@ -24,11 +25,16 @@ mani.set("number","mani")
 mani.set("age","narayana")
 mani.set("name","devi")
 console.log(mani);
+// * output { 'number' => 'mani', 'age' => 'narayana', 'name' => 'devi' }
 // * how to apply loop on maps
 // * this syntax is used to print the keys and values of the map
 for (const [key,value] of mani) {
     console.log(key, value);
 }
+// * output 
+// number mani
+// age narayana
+// name devi
 // * In programming, **objects** and **maps** are both used to store key-value pairs, 
 // but they have key differences in their design and functionality.
 
@@ -121,8 +127,11 @@ let mobile=[
 
     }
 ]
-mobile.forEach((item)=>{
-    console.log(item.mobile);
+mobile.forEach((key)=>{
+    console.log(key.mobile,key.price);
     
 })
 // * first we shuld take the value in parenthesis after that we can access from the function
+let gender= new Map
+gender.set("name","name")
+
