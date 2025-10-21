@@ -35,18 +35,18 @@ console.log (Id2)
 console.log(Id1 === Id2); // false, because each Symbol is unique
 // *************Important Note on Data Types in JavaScript*************
 // to find the data type of a variable in JavaScript, you can use the `typeof` operator.
-// Type of val	Result
+// Type of val	 Result
 // Undefined	"undefined"
-// Null	"object"
-// Boolean	"boolean"   
-// Number	"number"
-// BigInt	"bigint"
-// String	"string"
-// Symbol	"symbol"
-// Object	"object"
-// Array	"object" (arrays are a type of object)
-// Function	"function" (functions are a type of object)
-// Date	"object" (dates are a type of object)
+// Null     	"object"
+// Boolean	    "boolean"   
+// Number	    "number"
+// BigInt	    "bigint"
+// String	    "string"
+// Symbol	    "symbol"
+// Object	    "object"
+// Array	    "object" (arrays are a type of object)
+// Function	   "function" (functions are a type of object)
+// Date	       "object" (dates are a type of object)
 // Regular Expression	"object" (regex is a type of object)
 // special type of function "function object"
 
