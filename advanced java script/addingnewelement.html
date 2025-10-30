@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating New Elements in Dom</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    
+    }
+    div{
+        color: white;
+
+    }
+</style>
+<body>
+    <div class="parent">
+        <div class="children">child1</div>
+        <div class="children">child2</div>
+        <div class="children">child3</div>
+        <div class="children">child4</div>
+    </div>
+    <script>
+        // first let us select the parent element 
+        let parentelement=document.querySelector('.parent');
+        console.log(parentelement);
+        console.log(parentelement.children);
+        // this will give us the html collection of all the children present inside the parent element
+        // To access a specific child, we can use indexing on the HTMLCollection.
+        console.log(parentelement.children[2]);
+        // output
+        // <div class="children">child3</div>
+        // now we will write small code to display all children
+        for(let i=0;i<parentelement.children.length;i++){
+            console.log(parentelement.children[i].innertext);
+        }
+        // output
+        // child1
+        // child2   
+        // child3
+        // child4
+        // Now let us study about transvresal from parent to fisrst child and last child
+        let child1=parentelement.firstElementChild
+        let child4=parentelement.lastElementChild
+        console.log(child1);
+        console.log(child4);
+        // output
+        // <div class="children">child1</div>
+        // <div class="children">child4</div>
+        // we can transvrse from child to parent as well
+        let parent=child1.parentElement
+        console.log(parent);
+        // output
+        // <div class="parent">​…​</div>​
+        // we can also transvrse to next sibling and previous sibling
+        let child2=child1.nextElementSibling
+        // ABOUT CHILD NODES
+        console.log(parentelement.childNodes);
+        // it will give all the nodes inside the parent element including text nodes
+        // output
+        // NodeList(7) [ text, div.children, text, div.children, text, div.children, text ]
+        // Now we will see how to add new elements to the dom
+        let divcreation=document.createElement('div');
+        divcreation.className='newdivclass';
+        divcreation.id='newdivid';
+        divcreation.style.color='red';
+        divcreation.style.backgroundColor='yellow';
+        let addtext=document.createTextNode('I am a new div added to the dom');
+        // now we will append the text to the div
+        divcreation.appendChild(addtext);
+        // now we will append the div to the parent element or we can append to body as well
+        document.body.appendChild(divcreation);
+        console.log(document.querySelector('.newdivclass'));
+        // output
+        // <div class="newdivclass" id="newdivid" style="color: red; background-color: yellow;">I am a new div added to the dom</div>
+        
+        
+        
+    </script>
+     
+    
+</body>
+</html>
