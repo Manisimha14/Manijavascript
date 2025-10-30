@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud By Dom</title>
+    <style>
+        body{
+            background-color: black;
+        
+        }
+        ol{
+            color: white;
+    
+        }
+    </style>
+</head>
+<body>
+    <ol class="parent">
+        <li>Member1</li>
+        <li>Member2</li>
+        <li>Member3</li>
+        <li>Member4</li>
+    </ol>
+    <script>
+        let parentelment=document.querySelector('.parent');
+        // if we want to add a member to the list of family
+        function addmember(membername){
+           let newmember= document.createElement('li');
+           newmember.innerText=membername;
+           parentelment.appendChild(newmember);
+        }
+        addmember('Member5');
+        // for optimised one
+        function addmemberoptimized(membername){
+           let newmember= document.createElement('li');
+           newmember.appendChild(document.createTextNode(membername))
+           parentelment.appendChild(newmember);
+        }
+        addmemberoptimized('Member6');
+        // to edit a member
+        function editmember(newmname,position){
+            let newmember=document.createElement('li');
+            newmember.appendChild(document.createTextNode(newmname));
+            let target=parentelment.children[position]
+            target.replaceWith(newmember);
+
+        }
+        editmember('EditedMember3',2);
+        // how to remove a member
+        // we can remove a member by using the remove method
+    </script>
+</body>
+</html>
