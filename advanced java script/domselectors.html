@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    
+    }
+    div{
+        color: white;
+
+    }
+    ol{
+        color: white;
+    }
+</style>
+<body>
+   <div>
+    <h1 id="heading" class="headingclass">Dom selectors <span style="display: none;">Hi mani</span></h1>
+    <h1 id="heading1" class="headingclass1">Dom selectors <span style="display: none;">Hi mani</span></h1>
+    <p>This is a paragraph.</p>
+   </div> 
+   <ol>
+    <li class="li1">one</li>
+    <li class="li1">two</li>
+    <li class="li1">three</li>
+   </ol>
+   <div>This is prepared with love by Mani Simha</div>
+   <script >
+    // to select by id
+let idselection=document.getElementById('heading')
+console.log(idselection);
+// output 
+// domselectors.js:3 <h1 id=​"heading" class=​"headingclass">​Dom selectors​</h1>​
+console.log(idselection.id);
+// output 
+// heading
+console.log(idselection.class);
+// output  
+// undefined
+console.log(idselection.className);
+// output
+// headingclass
+// ! GET ARTRIBUTE
+console.log(idselection.getAttribute('id'))
+// heading 
+// * we should mention what artribute should be given
+console.log(idselection.getAttribute('class'));
+// heading class
+// ! SET ARTRIBUTE
+console.log(idselection.setAttribute('class','hclass'));
+// in console it will show undefined because setAttribute does not return any value
+// but if we check in html the class name will be changed to hclass and it will be reflected in the dom as well 
+// ! it will override the existing class name with the new one
+// to prevent this we can use classList
+console.log(idselection.classList.add('h1class'));
+console.log(idselection.getAttribute('class'));
+// hclass h1class
+// now both classes are present 
+// trying to add multiple classes using setAttribute
+console.log(idselection.setAttribute('class','hclass','h1class'))
+// but this will not work as setAttribute only takes two parameters
+// ! STYLING USING JS DOM
+idselection.style.color='red';
+idselection.style.backgroundColor='yellow';
+// pseudo code is target the element.style.propertyname='value'
+// ! TO GET THE DATA MANIPULATE THE ELEMENT
+console.log(idselection.innerText);
+// Dom selectors
+console.log(idselection.textContent);
+// Dom selectors
+// both innerText and textContent give the same output here then what is the difference
+// innerText considers the styling and will not return hidden text where as textContent returns all the text including hidden text
+// lets add a hidden text to see the difference
+// now if we check innerText and textContent again
+console.log(idselection.innerText);
+// Dom selectors
+console.log(idselection.textContent);
+// Dom selectors Hi mani
+console.log(idselection.innerHTML);
+// Dom selectors <span style="display: none;">Hi mani</span>
+// it will return the html structure inside the element
+// ! ANOTHER WAY TO SELECT ELEMENTS (QUERY SELECTOR)
+// for id use #
+let queryselectbtid=document.querySelector('#heading1')
+// for class use .
+let queryselectbtclass=document.querySelector('.headingclass1')
+// for tag just use the tag name
+// ! it will select only the first matching element
+// Let us do a small exercise there is ordered list in the html with some items we need to select the first item and change its text color to green
+let ol=document.querySelector('ol')
+let firstli=ol.querySelector('li')
+firstli.style.color='green';
+// but this is not an efficient way to do this 
+// we can do this directly using nth-child selector
+// now let us use querySelector all
+let allli=document.querySelectorAll('li');
+console.log(allli);
+// it will return a node list of all the li elements
+// now let us learn the difference between arrray and node list
+// node list does not have array methods like pop push map etc but contains forEach
+// now let us try to change all li text color to blue
+// ! allli.style.color='blue';
+// it will not work as node list does not support this 
+// we can use forEach to achieve this
+allli .forEach((li)=>{li.style.color='blue'});
+// ! HTML COLLECTION
+let classlist=document.getElementsByClassName('li1');
+console.log(classlist);
+// here we will get html collection
+// Difference between html collection and node list
+// html collection is live where as node list is static
+// live means if there is any change in the dom it will be reflected in the html collection but not in node list
+// and we can not use forEach in html collection or loop through html collection using for of loop
+// we can use for loop to iterate through html collection
+for(let i=0;i<classlist.length;i++){
+    classlist[i].style.fontWeight='bold';
+}
+// now all the elements with li1 class will be bold
+// or else we can convert html collection to array and then use forEach
+Array.from(classlist).forEach((li)=>{li.style.fontSize='20px'});
+// When does the node list come and when does the html collection come
+// node list comes when we use querySelectorAll
+// html collection comes when we use getElementsByClassName or getElementsByTagName
+
+   </script>
+</body>
+</html>
