@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In js</title>
+</head>
+<body style="background-color: black;
+color: white;">
+    <h2 style="color: orange;">Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: red;" href="https://google.com" id="google">Google</a></li>
+
+        </ul>
+   </div>
+   <script>
+    // first we will see how to add event listener to an element
+    // we will provide an alert on which image is clicked
+    // first we need to access the image
+    let photoshopimg=document.getElementById('photoshop');
+    // we will now add event listener
+    photoshopimg.addEventListener('click',()=>{
+        alert("photoshopimg")
+    },false)
+    // this is one type we can also use onclick
+    photoshopimg.onclick=()=>{
+        console.log("photoshopimg");
+        
+    }
+    // but this is not effecient way
+    // EVENT OBJECT
+    // important events 
+    // mouse enter,mouse leave, mouse over, mouse out, mouse down, mouse up, mouse move 
+    let parent=document.querySelector('#images');
+    for(let i=0;i<parent.children.length;i++){
+        parent.children[i].addEventListener('click',()=>{
+            alert(parent.children[i])
+        },false)
+    }
+    // it is not a good practice to add event listener in loop
+    // better way is event delegation
+    // First we will now what is event bubling
+    // suppose we have three divs naming outer , middle , inner
+    // if we add event listener to all three divs for click event and on click it logs the name of the div
+    // if we click on the inner div it will log inner , middle , outer
+    // this is called event bubling
+    // we will see how it works
+    // event bubling takes three phases
+    // 1. capturing phase   
+    // 2. target phase
+    // 3. bubbling phase
+    // in the capturing phase we transverse from the outermost element to the target element
+    // in the target phase the event is executed on the target element
+    // in the bubbling phase we transverse from the target element to the outermost element
+    // so it will first go to outer div then middle div then inner div and check for the target element
+    // and we will discuss about third parameter of addEventListener false and true
+    // by default it is false
+    // if it is false it will go to bubbling phase
+    // if it is true it will go to capturing phase
+    // we can stop the propagation of event bubling using stopPropagation method
+    // there is a lot to discuss about event object in js
+    // like the important one target it specifies which element triggered the event
+    // there is also currentTarget it specifies which element the event listener is attached to
+    // to remove event listener we can use removeEventListener method
+    function handleevent(e){
+        parent.removeEventListener('click',handleevent,false);
+    }
+    parent.addEventListener('click',handleevent,false);
+
+
+   </script>
+    
+</body>
+</html>
